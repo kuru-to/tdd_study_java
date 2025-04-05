@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 public class MoneyTest {
     @Test
     public void testMultiplication() {
-        Dollar five = new Dollar(5);
-        Dollar ten = five.times(2);
-        assertEquals(10, ten.amount);
+        Money five = Money.dollar(5);
+        Money ten = five.times(2);
+        assertEquals(ten, Money.dollar(5 * 2));
     }
 
     @Test
     public void testEquality() {
-        assertTrue(new Dollar(5).equals(new Dollar(5)));
-        assertFalse(new Dollar(5).equals(new Dollar(6)));
+        assertTrue(Money.dollar(5).equals(Money.dollar(5)));
+        assertFalse(Money.dollar(5).equals(Money.dollar(6)));
     }
 }
